@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 //Importamos los componentes que hemos creado:
 import { Admin } from './components/admin/admin';
 import { User } from './components/user/user';
+import { DataBinding } from './components/data-binding/data-binding';
 
 
 @Component({
   selector: 'app-root',
-  imports: [Admin,User],
+  imports: [Admin,User,DataBinding],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
