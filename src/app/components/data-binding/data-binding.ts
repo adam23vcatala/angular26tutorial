@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './data-binding.css',
 })
 export class DataBinding {
-
+  courseName: string = "Angular 26 Tutorial";
+  productPrice: number = 12500;
+  constructor() {
+    
+  }
 }
