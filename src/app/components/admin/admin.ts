@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './admin.css',
 })
 export class Admin {
-
+  firstName = "Víctor";
+  courseName = "Angular26";
+  rollNo = 111;
 }
