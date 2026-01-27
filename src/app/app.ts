@@ -8,8 +8,8 @@ import { SignalEx } from './components/signal-ex/signal-ex';
 
 
 @Component({
-  selector: 'app-root',
-  imports: [Admin,User,DataBinding],
+  selector: 'app-root',,
+  imports: [Admin,User,DataBinding,SignalEx],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
