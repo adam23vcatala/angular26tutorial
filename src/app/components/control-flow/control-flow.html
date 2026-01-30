@@ -1,1 +1,81 @@
 <p>control-flow works!</p>
+<table>
+    <tr>
+        <td>
+            @if (isParaVisible == true) {
+            <p>This is sample Para</p>
+            } @else {
+            <span>Small Tag</span>
+            <h3>isParaVisible has False value</h3>
+            }
+        </td>
+        <td>
+            <button (click)="showP()">Show P</button>
+        </td>
+        <td>
+            <button (click)="hideP()">Hide P</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @if (startMonthName == 'jan') {
+            <span>january</span>
+            } @else if (startMonthName == 'feb') {
+            <span>february</span>
+            } @else if (startMonthName == 'mar') {
+            <span>march</span>
+            } @else if (startMonthName == 'apr') {
+            <span>april</span>
+            } @else {
+            <span>wrong entry</span>
+            }
+        </td>
+    <tr>
+        <input type="text" [(ngModel)]="startMonthName">
+    </tr>
+    <tr>
+        <!-- podemos crear una lista con un array-->
+        <td>
+            <ul>
+                @for(item of citList; track $index) {
+                <li>{{item}}</li>
+                }
+            </ul>
+        </td>
+        <td>
+            <!-- podemos crear los elementos de un SELECT con un array-->
+            <select>
+                @for(item of citList; track $index) {
+                <option value="">{{item}}</option>
+                }
+            </select>
+        </td>
+    </tr>
+</table>
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Sr No</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(item of studentList; track $index) {
+      <tr>
+        <td>{{$index+1}}</td> <!-- +1 para que no empiece en 0-->
+        <td>{{item.name}}</td>
+        <td>{{item.city}}</td>
+        <td>@if(item.isActive == true) {
+              <h6>Active</h6>
+            } @else {
+              <h6>De-Active</h6>
+            }
+
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
