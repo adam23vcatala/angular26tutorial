@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, OnDestroy, OnInit, signal } from '@angular/core';
+import { LowerCasePipe, NgClass, NgStyle, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-att-directive',
-  imports: [],
+  imports: [NgClass, NgStyle, UpperCasePipe, LowerCasePipe],
   templateUrl: './att-directive.html',
   styleUrl: './att-directive.css',
 })
@@ -47,4 +48,9 @@ export class AttDirective implements OnInit, AfterContentInit,AfterContentChecke
     //Se usa para: -limpiar recursos, -cancelar suscripciones a observables, -detener timers, -liberar memoria, -realizar cualquier tarea de limpieza necesaria para evitar fugas de memoria o comportamientos inesperados después de que el componente haya sido destruido.
     //Resumen: “Aquí limpio todo”
   }
+
+  div1ClassName = signal<string>('');
+
+  firstName: string = 'Víctor';
+  courseName: string = 'Angular';
 }
