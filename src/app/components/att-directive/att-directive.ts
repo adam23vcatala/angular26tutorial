@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, OnDestroy, OnInit, signal } from '@angular/core';
-import { LowerCasePipe, NgClass, NgStyle, UpperCasePipe } from '@angular/common';
+import { NgClass, NgStyle, UpperCasePipe, LowerCasePipe, SlicePipe, JsonPipe, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-att-directive',
-  imports: [NgClass, NgStyle, UpperCasePipe, LowerCasePipe],
+  imports: [NgClass, NgStyle, UpperCasePipe, LowerCasePipe, SlicePipe, JsonPipe, DatePipe],
   templateUrl: './att-directive.html',
   styleUrl: './att-directive.css',
 })
@@ -53,4 +53,15 @@ export class AttDirective implements OnInit, AfterContentInit,AfterContentChecke
 
   firstName: string = 'Víctor';
   courseName: string = 'Angular';
+
+  // Afegim un array de números al component
+  rollNoList: number[] = [11, 12, 13, 14, 15, 16, 17];
+
+  // Afegim un objecte al component
+    studentObj: any = {
+      name: 'Víctor',
+      age: 21,
+      course: 'Angular'
+    };
+    currentDate: Date = new Date();
 }

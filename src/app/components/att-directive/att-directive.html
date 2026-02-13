@@ -4,14 +4,38 @@
         firstName => {{ firstName }}
         <br>
         {{firstName | uppercase}}
-        <br>
-        {{firstName | lowercase}}
     </div>
     <div class="col-3">
         courseName => {{ courseName }}
         <br>
-        {{courseName | uppercase}}
-        <br>
         {{courseName | lowercase}}
+    </div>
+    <!--- Afegim un exemple de pipe slice per mostrar només una part de l'array -->
+    <div class="col-3">
+        rollNoList => {{ rollNoList }}
+        <br>
+        {{rollNoList | slice:0:3}}
+        <br>
+        {{rollNoList | slice:3}}
+    </div>
+    <!--- Afegim un exemple de pipe json per mostrar un objecte -->
+    <div class="col-3">
+        studentObj => {{ studentObj }}
+        <br><br>
+        {{studentObj | json}}
+    </div>
+    <!--- Afegim un exemple de pipe date per mostrar una data -->
+    <div class="col-3">
+         currentDate => {{ currentDate }}
+        <br><br>
+        {{currentDate | date:'fullDate'}}
+        <br><br>
+        {{currentDate | date:'shortTime'}}
+        <br><br>
+        {{currentDate | date:'dd-MM-yyyy'}}
+        <br><br>
+        {{currentDate | date:'shortTime'}}
+        <br><br>
+        {{currentDate | date:'dd-MMMM-yy'}}
     </div>
 </div>
