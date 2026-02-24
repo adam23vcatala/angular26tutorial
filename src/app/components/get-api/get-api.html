@@ -1,1 +1,50 @@
 <p>get-api works!</p>
+<div class="row">
+    <div class="col-6">
+        <h1>Get API</h1>
+        <p>En aquest component, farem una petició GET a una API per obtenir una llista d'usuaris i mostrar-la al
+            template.</p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Website</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of userList; track $index) {
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.website }}</td>
+                    <td>{{ item.username }}</td>
+                    <td>{{ item.email }}</td>
+                </tr>
+                }
+                <!-- A versions anteriors s'utilitza *ngFor, però està deprecated a versions noves-->
+                <!--
+                <tr *ngFor="let user of userList">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.website }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                </tr>
+                -->
+            </tbody>
+        </table>
+        <div class="col-6"> <!-- Afegim una nova columna per mostrar la llista de tasques -->
+            <h2>Llistem les tasques</h2>
+            <p>En aquest component, farem una petició GET a una API per obtenir una llista de tasques i
+                mostrar-la al template.</p>
+            <ul>
+                @for (item of todoList; track $index) {
+                <li>{{ item.title }}</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
