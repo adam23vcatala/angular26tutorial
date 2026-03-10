@@ -1,2 +1,66 @@
 <p>user works!</p>
-<input type="text" placeholder="Escribe tu nombre"/>
+<input type="text" placeholder="Escribe tu nombre" />
+<div class="row">
+    <div class="card-body"> <!-- Aquí ficarem la taula per mostrar els usuaris -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Sr no</th>
+                    <th>emailID</th>
+                    <th>fullName</th>
+                    <th>MobileNo</th>
+                    <th>password</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(item of userList; track $index) {
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{item.emailId}}</td>
+                    <td>{{item.fullName}}</td>
+                    <td>{{item.mobileNo}}</td>
+                    <td>{{item.password}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-5"> <!-- Aquest bloc serà per mostrar el formulari de creació d'usuaris -->
+        <div class="card">
+            <div class="card-header bg-success">
+                New User
+            </div>
+            <div class="card-body">
+                <div class="row"> <!-- Aquest row és per posar els camps del formulari en dues columnes -->
+                    <div class="col-6">
+                        <label for="">Email</label>
+                        <input type="text" class="form-control" [(ngModel)]="userObj.emailId" />
+                        <!-- Podriem ficar place holder:
+                            <input type="text" class="form-control"  placeholder="Escribe tu email" [(ngModel)]="userObj.emailId" />
+                            -->
+                    </div>
+                    <div class="col-6">
+                        <label for="">Password</label>
+                        <input type="text" class="form-control" [(ngModel)]="userObj.password" />
+                    </div>
+                    <div class="col-6">
+                        <label for="">Full Name</label>
+                        <input type="text" class="form-control" [(ngModel)]="userObj.fullName" />
+                    </div>
+                    <div class="col-6">
+                        <label for="">Mobile No</label>
+                        <input type="text" class="form-control" [(ngModel)]="userObj.mobileNo" />
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-3 mb-3"> <!-- Aquest row és per posar els botons de crear i reset -->
+                <div class="col-6 text-center">
+                    <button class="btn btn-primary">Reset</button>
+                </div>
+                <div class="col-6 text-center">
+                    <button class="btn btn-success" (click)="onSaveUser()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
